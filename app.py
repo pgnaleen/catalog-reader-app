@@ -4,10 +4,10 @@ import pymysql
 
 app = Flask('catalog-reader')
 
-connection = pymysql.connect(host='127.0.0.1',
-                             user='root',
-                             password='root',
-                             db='ase_assignment')
+#connection = pymysql.connect(host='127.0.0.1',
+#                             user='root',
+#                             password='root',
+#                             db='ase_assignment')
 
 #requestBody='{"items": ['
 
@@ -30,6 +30,11 @@ connection = pymysql.connect(host='127.0.0.1',
 
 @app.route('/')
 def hello():
+    connection = pymysql.connect(host='127.0.0.1',
+                             user='root',
+                             password='root',
+                             db='ase_assignment')
+
     requestBody='{"items": ['
 
     try:
