@@ -14,7 +14,7 @@
 
 # [START cloudbuild]
 steps:
- This step runs the unit tests on the app
+        # This step runs the unit tests on the app
 - name: 'python:3.7-slim'
   id: Test
   entrypoint: /bin/sh
