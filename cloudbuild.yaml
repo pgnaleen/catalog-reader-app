@@ -31,8 +31,7 @@ updated_on TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 INSERT INTO Catalog VALUES (null,"ToothBrush", 145.50, 20, null);
 INSERT INTO Catalog VALUES (null,"soap", 45.50, 220, null);\
 INSERT INTO Catalog VALUES (null,"Men Wallet", 3345.50, 10, null);
-eof
-&& pip install flask && pip install pymysql && pip install pytest_mysql && python test_app.py -v']
+eof && pip install flask && pip install pymysql && pip install pytest_mysql && python test_app.py -v']
 
 # This step builds the container image.
 - name: 'gcr.io/cloud-builders/docker'
