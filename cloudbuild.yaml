@@ -18,9 +18,7 @@ steps:
 - name: 'python:3.7-slim'
   id: Test
   entrypoint: /bin/sh
-  args:
-  - -c
-  - 'apt-get update && apt-get install -y libmariadb-dev-compat libmariadb-dev python-dev gcc mariadb-server && mkdir -p /run/mysqld && chown mysql:mysql -R /run/mysqld && mysqld & && mysql << eof
+  args: [ '-c', 'apt-get update && apt-get install -y libmariadb-dev-compat libmariadb-dev python-dev gcc mariadb-server && mkdir -p /run/mysqld && chown mysql:mysql -R /run/mysqld && mysqld & && mysql << eof
 create database ase_assignment;
 use ase_assignment;
 CREATE TABLE Catalog(
@@ -34,7 +32,7 @@ INSERT INTO Catalog VALUES (null,"ToothBrush", 145.50, 20, null);
 INSERT INTO Catalog VALUES (null,"soap", 45.50, 220, null);\
 INSERT INTO Catalog VALUES (null,"Men Wallet", 3345.50, 10, null);
 eof
-&& pip install flask && pip install pymysql && pip install pytest_mysql && python test_app.py -v'
+&& pip install flask && pip install pymysql && pip install pytest_mysql && python test_app.py -v']
 
 # This step builds the container image.
 - name: 'gcr.io/cloud-builders/docker'
