@@ -16,8 +16,6 @@
 FROM python:3.7-slim
 RUN pip install flask
 RUN pip install pymysql
-RUN pip install testing.mysqld
-RUN pip install sqlalchemy
 
 RUN apt-get update
 RUN apt-get install -y iputils-ping
@@ -25,9 +23,6 @@ RUN apt-get install -y procps
 RUN apt-get install -y telnet
 RUN apt-get install -y curl
 RUN apt-get install -y vim
-RUN apt-get install -y libmariadb-dev-compat libmariadb-dev python-dev gcc
-
-RUN pip install pytest_mysql
 
 WORKDIR /app
 COPY app.py /app/app.py
