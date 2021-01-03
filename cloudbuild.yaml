@@ -18,9 +18,9 @@ steps:
 - name: 'python:3.7-slim'
   id: Test
   entrypoint: /bin/sh
-  args: [ '-c', 'apt-get update && apt-get install -y libmariadb-dev-compat libmariadb-dev python-dev gcc mariadb-server && mkdir -p /run/mysqld && chown mysql:mysql -R /run/mysqld && mysqld & && mysql << eof
-create database ase_assignment;
-use ase_assignment;
+  args: [ '-c', 'apt-get update && apt-get install -y libmariadb-dev-compat libmariadb-dev python-dev gcc mariadb-server && mkdir -p /run/mysqld && chown mysql:mysql -R /run/mysqld && mysqld & && mysql << eof \
+create database ase_assignment; \
+use ase_assignment; \
 CREATE TABLE Catalog(
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 item_name VARCHAR(30),
